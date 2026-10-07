@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psubbiah <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/05 22:17:56 by psubbiah          #+#    #+#             */
-/*   Updated: 2026/10/05 23:05:53 by psubbiah         ###   ########.fr       */
+/*   Created: 2026/10/07 19:13:50 by psubbiah          #+#    #+#             */
+/*   Updated: 2026/10/07 19:19:30 by psubbiah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int nb)
+void	*ft_print_program_name(void)
 {
-	char ngv = '-';
-	if (nb < 0)
+	int	i;
+	
+	i = 0;
+	char *file_name = __FILE__;
+	while (file_name[i] != '\0')
 	{
-		int *nbr = &nb;
-		write(1, , 1);	
-	}
-	else
-	{
-		int *nbr = &nb;
-		write(1, &nbr, 1);
+		write(1, &file_name[i], 1);
+		i++;
 	}
 }
 
-int	main(void){
-	ft_putnbr(3);
-	ft_putnbr(-19);
+int	main(void)
+{
+	ft_print_program_name();
 	return (0);
 }

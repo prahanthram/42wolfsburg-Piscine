@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psubbiah <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/05 22:17:56 by psubbiah          #+#    #+#             */
-/*   Updated: 2026/10/05 23:05:53 by psubbiah         ###   ########.fr       */
+/*   Created: 2026/10/07 19:26:47 by psubbiah          #+#    #+#             */
+/*   Updated: 2026/10/07 19:46:37 by psubbiah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putnbr(int nb)
+void	ft_putstr(char *str)
 {
-	char ngv = '-';
-	if (nb < 0)
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		int *nbr = &nb;
-		write(1, , 1);	
-	}
-	else
-	{
-		int *nbr = &nb;
-		write(1, &nbr, 1);
+		write(1, &str[i], 1);
+		i++;
 	}
 }
 
-int	main(void){
-	ft_putnbr(3);
-	ft_putnbr(-19);
+int	main(int argc, char *argv[])
+{
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		ft_putstr(argv[i]);
+		write(1, "\n", 1);
+		i++;
+	}
 	return (0);
 }
